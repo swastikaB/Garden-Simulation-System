@@ -1,1 +1,2 @@
 # Java-Projects
+This project simulates a home garden sprinkling system's device. The device shows the sprinklers installed in the garden and indicates their status in a graphical format. Users can schedule the sprinklers according to time and temperature. It also shows the water consumption chart. It is implemented using the MVC architecture and 'Observer' pattern in Java. The UI is created using Java swings framework. PostgresSQL is used to store water consumption data.
