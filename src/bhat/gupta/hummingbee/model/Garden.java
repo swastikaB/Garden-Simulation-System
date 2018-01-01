@@ -7,16 +7,27 @@ public class Garden extends Observable{
 	private String name;
 	private List<Zone> zones;
 	private int temp;
+	private static Garden garden;
 
+	/*
 	public Garden(String name) {
 		
 		this.name = name;
 		this.zones = new ArrayList<Zone>();
 		this.temp = 0;
 	}
-	public Garden() {
+	*/
+	private Garden() {
 		this.zones = new ArrayList<Zone>();
-		this.temp = 0;
+		this.name = "Humming Bee Garden";
+
+	}
+	
+	public static Garden getGarden(){
+		if (garden == null){
+			garden = new Garden();
+		}
+		return garden;
 	}
 	
 	/**

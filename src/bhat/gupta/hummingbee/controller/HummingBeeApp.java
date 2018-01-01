@@ -87,7 +87,7 @@ public class HummingBeeApp {
 
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Garden garden = new Garden("Humming Bee Garden");
+		Garden garden = Garden.getGarden();
 		gardenController = new GardenController(garden);
 		waterConsumptioncalculator = new WaterConsumptionCalculator();
 
@@ -277,6 +277,11 @@ public class HummingBeeApp {
 		String strMaxTemp = maxTempTextField.getText().trim();
 		String strStartTime = startTimeTextField.getText().trim();
 		String strStopTime = stopTimeTextField.getText().trim();
+		return validateData(strMinTemp, strMaxTemp, strStartTime, strStopTime);
+	}
+		
+	public boolean validateData(String strMinTemp, String strMaxTemp, String strStartTime, String strStopTime){
+		
 		if ((strMinTemp != null && !strMinTemp.isEmpty() && !strMinTemp.matches("[0-9]+"))
 				|| (strMaxTemp != null && !strMaxTemp.isEmpty() && !strMaxTemp.matches("[0-9]+"))) {
 			JOptionPane.showMessageDialog(null, "Invalid temperature! Temperature should be in whole numbers");
